@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,15 +40,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void configurarBotaoResultado() {
-        btcalcular.setOnClickListener(new View.OnClickListener(){
-            @Override
-
-            public void onClick(View view) {
-                realizaCalculo();
-                limpaCampos();
-                esconderteclado();
-            }
-
+        btcalcular.setOnClickListener(view -> {
+            Toast.makeText(this, "Seu melhor combustível é: ", Toast.LENGTH_SHORT).show();
+            realizaCalculo();
+            limpaCampos();
+            esconderteclado();
         });
     }
 
